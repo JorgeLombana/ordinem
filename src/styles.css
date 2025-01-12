@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+/* General Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Poppins", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Lists */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* buttons */
+
+button {
+  cursor: pointer;
+}
+
+/* Normalize Scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #e0e0e0;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #e0e0e0;
+}

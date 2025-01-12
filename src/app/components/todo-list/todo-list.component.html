@@ -1,0 +1,31 @@
+<!-- <form [formGroup]="createTodoForm" (ngSubmit)="onSubmit()">
+  <label for="title">Titulo</label>
+  <input type="text" id="title" formControlName="title" />
+
+  <label for="description">Descripción</label>
+  <input type="text" id="description" formControlName="description" />
+
+  <label for="tags">Etiquetas</label>
+  <input type="text" id="tags" formControlName="tags" />
+
+  <label for="priority">Prioridad</label>
+  <select formControlName="priority" id="priority">
+    <option value="low">bajo</option>
+    <option value="medium">medio</option>
+    <option value="high">alto</option>
+  </select>
+
+  <button type="submit" [disabled]="!createTodoForm.valid">Crear</button>
+</form> -->
+
+@for (todo of todos(); track todo.id) {
+  <div class="task" (click)="goToTask()">
+    <span class="task__checkbox-showed" [class.checked]="todo.completed" (click)="checked(todo.id)"></span>
+    <div class="task__name" [class.task-done]="todo.completed">{{ todo.title }}</div>
+    <div class="task__date">{{ todo.createdAt | date }} </div>
+  </div>
+} @empty {
+  <p>
+    No hay tareas para mostrar
+  </p>
+}
