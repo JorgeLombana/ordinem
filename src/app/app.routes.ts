@@ -17,6 +17,13 @@ export const routes: Routes = [
             (c) => c.TodoListComponent
           ),
       },
+      {
+        path: 'create-todo',
+        loadComponent: () =>
+          import('@components/create-task/create-task.component').then(
+            (c) => c.CreateTaskComponent
+          ),
+      },
       { path: '', component: HomeComponent, pathMatch: 'full' }, //to redirect when the url is void (myapp.com/)
     ],
   },

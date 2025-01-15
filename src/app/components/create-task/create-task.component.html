@@ -1,0 +1,41 @@
+<div class="create-task">
+  <div class="create-task__buttons">
+    <div routerLink="/todo-list" class="create-task__button create-task__button--return">
+      <mat-icon class="material-icons-round">keyboard_backspace</mat-icon>
+    </div>
+    <button class="create-task__button create-task__button--save">Guardar</button>
+  </div>
+  <form class="create-task__form" [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <h2 class="create-task__title"></h2>
+
+    <label for="title" class="create-task__label">Título</label>
+    <input type="text" id="title" class="create-task__input" formControlName="title">
+
+    <label for="description" class="create-task__label">Descripción</label>
+    <textarea name="description" id="description" class="create-task__input create-task__input--textarea"></textarea>
+
+    <label for="priority" class="create-task__label">Prioridad</label>
+    <div class="create-task__buttons-priority">
+      <button [ngClass]="{'priority-selected': priority() == priorityEnum.low}" (click)="setPriority(priorityEnum.low)"
+        class="create-task__button create-task__priority-button">Baja</button>
+      <button [ngClass]="{'priority-selected': priority() == priorityEnum.medium}"
+        (click)="setPriority(priorityEnum.medium)"
+        class="create-task__button create-task__priority-button">Media</button>
+      <button [ngClass]="{'priority-selected': priority() == priorityEnum.high}"
+        (click)="setPriority(priorityEnum.high)" class="create-task__button create-task__priority-button">Alta</button>
+    </div>
+
+    <label for="tags" class="create-task__label">Etiquetas</label>
+    <div class="create-task__tags-container">
+      <input type="text" name="tags" id="tags" #tagInput class="create-task__input create-task__input--tags" />
+      <button (click)="addTag(tagInput.value); tagInput.value = ''" class="create-task__button create-task__add-tag">
+        Añadir
+      </button>
+    </div>
+
+    @for (tag of tags(); track $index) {
+      <div>{{ tag }}</div>
+    }
+
+  </form>
+</div>

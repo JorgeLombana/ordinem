@@ -1,3 +1,50 @@
+:root {
+  /* Colores principales */
+  --color-primary: #4caf50;
+  --color-primary-hover: rgb(30, 118, 33);
+  --color-primary-light: #ace1af;
+  --color-primary-medium: #b0ebb4;
+  --color-primary-dark: #7bd381;
+  --color-primary-ultra-light: #e0fbe2;
+
+  /* Colores secundarios */
+  --color-secondary-light: #a7c7e7;
+  --color-secondary-dark: #3b6b8c;
+  --color-accent: #f5e27d;
+
+  /* Colores de fondo y sombras */
+  --color-background-light: #ffffff;
+  --color-background-soft: #f6f6f6;
+  --color-shadow-light: rgba(0, 0, 0, 0.1);
+  --color-shadow-dark: rgba(0, 0, 0, 0.2);
+
+  /* Colores de texto */
+  --color-text-primary: #333333;
+  --color-text-secondary: #58595a;
+  --color-text-buttons-light: rgb(94, 94, 94);
+  --color-text-link: #008c99;
+
+  /* Colores de botones */
+  --color-button-bg: var(--color-primary);
+  --color-button-bg-hover: var(--color-primary-light);
+  --color-button-text: #ffffff;
+
+  /* Colores para estados interactivos */
+  --color-hover: var(--color-primary-medium);
+  --color-active: var(--color-primary-dark);
+  --color-focus: var(--color-accent);
+
+  /* Colores de bordes */
+  --color-border-light: #e0e0e0;
+  --color-border-dark: #b0b0b0;
+
+  /* Colores para alertas */
+  --color-alert-success: #4caf50; /* Verde */
+  --color-alert-warning: #ffc107; /* Amarillo */
+  --color-alert-error: #f44336; /* Rojo */
+  --color-alert-info: #2196f3; /* Azul */
+}
+
 /* General Reset */
 *,
 *::before,
@@ -5,12 +52,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", serif;
 }
 
 html,
 body {
   height: 100%;
-  font-family: "Poppins", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -55,4 +102,13 @@ html::-webkit-scrollbar-thumb {
 
 html::-webkit-scrollbar-track {
   background-color: #e0e0e0;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
